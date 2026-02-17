@@ -2,84 +2,100 @@ package insuredge_ankush;
 
 import java.time.Duration;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class testBase {
 
-protected WebDriver driver;
-    
+    protected WebDriver driver;
+    private WebDriverWait wait;
+
+    // ---------- WAIT ----------
     protected WebDriverWait getWait() {
-        return new WebDriverWait(driver, Duration.ofSeconds(90));
+        if (wait == null) {
+            wait = new WebDriverWait(driver, Duration.ofSeconds(90));
+        }
+        return wait;
     }
 
-    protected void jsScroll(WebDriver driver, WebElement element) {
-        if (element == null) return;
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+    // ---------- DRIVER SETUP (CI friendly) ----------
+    protected void initDriver() {
+        ChromeOptions options = new ChromeOptions();
+
+        // Jenkins runs as SYSTEM -> headless is more stable
+        // If you want UI mode locally, comment next line.
+//        options.addArguments("--headless=new");
+
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--remote-allow-origins=*");
+
+        driver = new ChromeDriver(options);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(90));
+    }
+
+    protected void quitDriver() {
         try {
+            if (driver != null) driver.quit();
+        } catch (Exception ignored) { }
+    }
+
+    // ---------- UTIL: PAGE READY ----------
+    protected void waitForPageReady() {
+        try {
+            getWait().until(d ->
+                    ((JavascriptExecutor) d).executeScript("return document.readyState").equals("complete"));
+        } catch (Exception ignored) { }
+    }
+
+    // ---------- UTIL: SCROLL / SAFE CLICK ----------
+    protected void jsScroll(WebElement element) {
+        if (element == null) return;
+        try {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
             js.executeScript("arguments[0].scrollIntoView({block:'center', inline:'nearest'});", element);
-            js.executeScript("window.scrollBy(0, -80);"); // offset for sticky header
-        } catch (Exception ignore) {
-            try { new Actions(driver).scrollToElement(element).perform(); } catch (Exception ignored) {}
+            js.executeScript("window.scrollBy(0, -80);"); // sticky header offset
+        } catch (Exception e) {
+            try { new Actions(driver).scrollToElement(element).perform(); } catch (Exception ignored) { }
         }
     }
 
-    protected void jsClick(WebDriver driver, WebElement element) {
-        if (element == null) return;
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        jsScroll(driver, element);
+    protected void safeClick(By locator) {
+        WebElement el = getWait().until(ExpectedConditions.presenceOfElementLocated(locator));
+        getWait().until(ExpectedConditions.visibilityOf(el));
+        jsScroll(el);
+
+        // Try normal click first
         try {
-            js.executeScript("arguments[0].click();", element);
+            getWait().until(ExpectedConditions.elementToBeClickable(el)).click();
             return;
-        } catch (Exception ignore) { }
+        } catch (Exception ignored) { }
+
+        // Retry with JS click (CI overlays/responsive issues)
         try {
-            element.click();
-        } catch (Exception e) {
-            new Actions(driver).moveToElement(element).click().perform();
-        }
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", el);
+            return;
+        } catch (Exception ignored) { }
+
+        // Last fallback: Actions click
+        new Actions(driver).moveToElement(el).click().perform();
     }
 
-    protected boolean correctPageSanity_rph1() {
+    // ---------- PAGE TITLE SANITY ----------
+    protected boolean correctPageTitleIs(String expectedTitle) {
         try {
-            String title = getWait().until(
-                ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='pagetitle']/h1"))
-            ).getText().trim();
-            if (!title.equalsIgnoreCase("Rejected Policy Holders")) {
-                System.out.println("Fail: Page title mismatch. Found: " + title);
-                return false;
-            }
-            return true;
-        } catch (Exception e) {
-            System.out.println("Navigation is Incorrect: " + e.getMessage());
-            return false;
-        }
-    }
-    protected boolean correctPageSanity_pph1() {
-        try {
-            String title = getWait().until(
-                ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='pagetitle']/h1"))
-            ).getText().trim();
-            if (!title.equalsIgnoreCase("Pending Policy Holders")) {
-                System.out.println("Fail: Page title mismatch. Found: " + title);
-                return false;
-            }
-            return true;
-        } catch (Exception e) {
-            System.out.println("Navigation is Incorrect: " + e.getMessage());
-            return false;
-        }
-    }
-    protected boolean correctPageSanity_aph1() {
-        try {
-            String title = getWait().until(
-                ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='pagetitle']/h1"))
-            ).getText().trim();
-            if (!title.equalsIgnoreCase("approve Policy Holders")) {
+            WebElement h1 = getWait().until(
+                    ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'pagetitle')]//h1"))
+            );
+            String title = h1.getText().trim();
+            if (!title.equalsIgnoreCase(expectedTitle)) {
                 System.out.println("Fail: Page title mismatch. Found: " + title);
                 return false;
             }
@@ -90,59 +106,84 @@ protected WebDriver driver;
         }
     }
 
+    protected boolean correctPageSanity_pph1() { return correctPageTitleIs("Pending Policy Holders"); }
+    protected boolean correctPageSanity_rph1() { return correctPageTitleIs("Rejected Policy Holders"); }
+    protected boolean correctPageSanity_aph1() { return correctPageTitleIs("Approved Policy Holders"); } // fixed
+
+    // ---------- APP FLOW ----------
     protected void launchAndNavigation() {
         driver.get("https://qeaskillhub.cognizant.com/LoginPage");
-        driver.manage().window().maximize();
+        waitForPageReady();
     }
 
     protected void login() {
         try {
             WebElement username = getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("txtUsername")));
+            username.clear();
             username.sendKeys("admin_user");
+
             WebElement password = getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("txtPassword")));
+            password.clear();
             password.sendKeys("testadmin");
-            WebElement loginBtn = getWait().until(ExpectedConditions.elementToBeClickable(By.id("BtnLogin")));
-            loginBtn.click();
+
+            safeClick(By.id("BtnLogin"));
+
+            // Wait until login page is gone OR dashboard is present
+            getWait().until(ExpectedConditions.or(
+                    ExpectedConditions.urlContains("Dashboard"),
+                    ExpectedConditions.invisibilityOfElementLocated(By.id("BtnLogin"))
+            ));
+            waitForPageReady();
         } catch (Exception e) {
-            System.out.println("login failed: " + e.getMessage());
+            Assert.fail("Login failed: " + e.getMessage(), e);
+        }
+    }
+
+    // ---------- NAVIGATION (ROBUST) ----------
+    // Important: CLICK THE <a> NOT THE <span> and don't use li[5]
+    private final By POLICY_HOLDER_MENU = By.xpath(
+            "//ul[@id='sidebar-nav']//a[.//span[contains(normalize-space(),'Policy Holder')] or contains(normalize-space(.),'Policy Holder')]"
+    );
+
+    private final By PENDING_PH = By.xpath("//ul[@id='policyHolder-nav']//a[contains(normalize-space(.),'Pending')]");
+    private final By APPROVED_PH = By.xpath("//ul[@id='policyHolder-nav']//a[contains(normalize-space(.),'Approved')]");
+    private final By REJECTED_PH = By.xpath("//ul[@id='policyHolder-nav']//a[contains(normalize-space(.),'Rejected')]");
+
+    private void openPolicyHolderMenu() {
+        // Click menu (if it is collapsed / not opened)
+        safeClick(POLICY_HOLDER_MENU);
+
+        // Wait for submenu to appear
+        getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("policyHolder-nav")));
+    }
+
+    protected void navigation_pendingPH() {
+        try {
+            openPolicyHolderMenu();
+            safeClick(PENDING_PH);
+            waitForPageReady();
+        } catch (Exception e) {
+            Assert.fail("Navigation to Pending Policy Holders failed: " + e.getMessage(), e);
+        }
+    }
+
+    protected void navigation_approvedPH() {
+        try {
+            openPolicyHolderMenu();
+            safeClick(APPROVED_PH);
+            waitForPageReady();
+        } catch (Exception e) {
+            Assert.fail("Navigation to Approved Policy Holders failed: " + e.getMessage(), e);
         }
     }
 
     protected void navigation_rejectedPH() {
         try {
-            WebElement sidebar = getWait().until(
-                ExpectedConditions.elementToBeClickable(By.xpath("//body/aside[@id='sidebar']/ul[@id='sidebar-nav']/li[5]/a[1]/span[1]")));
-            sidebar.click();
-            WebElement rejectedPH = getWait().until(
-                ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='policyHolder-nav']/li[4]")));
-            rejectedPH.click();
+            openPolicyHolderMenu();
+            safeClick(REJECTED_PH);
+            waitForPageReady();
         } catch (Exception e) {
-            System.out.println("navigation failed: " + e.getMessage());
+            Assert.fail("Navigation to Rejected Policy Holders failed: " + e.getMessage(), e);
         }
-    }
-    protected void navigation_approvedPH() {
-        try {
-            WebElement sidebar = getWait().until(
-                ExpectedConditions.elementToBeClickable(By.xpath("//body/aside[@id='sidebar']/ul[@id='sidebar-nav']/li[5]/a[1]/span[1]")));
-            sidebar.click();
-            WebElement approvedPH = getWait().until(
-                ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='policyHolder-nav']/li[2]")));
-            approvedPH.click();
-        } catch (Exception e) {
-            System.out.println("navigation failed: " + e.getMessage());
-        }
-    }
-
-    protected void navigation_pendingPH() {
-    	try {
-    		WebElement sidebar = getWait().until(
-                    ExpectedConditions.elementToBeClickable(By.xpath("//body/aside[@id='sidebar']/ul[@id='sidebar-nav']/li[5]/a[1]/span[1]")));
-            sidebar.click();
-            WebElement pendingPH = getWait().until(
-                    ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='policyHolder-nav']/li[3]")));
-            pendingPH.click();
-    	}catch(Exception e){
-    		System.out.println("navigation failed: " + e.getMessage());
-    	}
     }
 }
