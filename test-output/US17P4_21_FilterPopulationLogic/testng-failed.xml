@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [US17P4_21_FilterPopulationLogic]">
+  <test thread-count="5" name="US17P4_21_tests(failed)">
+    <classes>
+      <class name="insuredge_ankush.US17P4_21_filterPopulationLogic">
+        <methods>
+          <include name="tc02_validateCustomerDropdownUniqueAndRelevant"/>
+          <include name="tc01_validateDefaultCustomerIsAll"/>
+          <include name="tc04_validatePolicyNameSearchSpecialChars_NoResultsThenRestore"/>
+          <include name="afterSuite"/>
+          <include name="tc03_validatePolicyNameAlphanumericSearch"/>
+          <include name="beforeSuite"/>
+          <include name="beforeClass"/>
+        </methods>
+      </class> <!-- insuredge_ankush.US17P4_21_filterPopulationLogic -->
+      <class name="insuredge_ankush.US17P4_13_ApproveButtonAction">
+        <methods>
+          <include name="TC01_validateApproveClick"/>
+          <include name="TC03_validateApprovalSuccessMessage"/>
+          <include name="TC02_validateRecordMovesToApproved"/>
+          <include name="afterSuite"/>
+          <include name="beforeClass"/>
+          <include name="beforeSuite"/>
+        </methods>
+      </class> <!-- insuredge_ankush.US17P4_13_ApproveButtonAction -->
+    </classes>
+  </test> <!-- US17P4_21_tests(failed) -->
+</suite> <!-- Failed suite [US17P4_21_FilterPopulationLogic] -->

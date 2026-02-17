@@ -1,0 +1,486 @@
+<html>
+<head>
+<title>TestNG:  US17P4_21_tests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>US17P4_21_tests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>11/0/7</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Feb 17 11:23:46 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>18 seconds (18105 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='insuredge_ankush.US17P4_21_filterPopulationLogic.beforeClass()'><b>beforeClass</b><br>Test class: insuredge_ankush.US17P4_21_filterPopulationLogic</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_21_filterPopulationLogic.beforeClass(US17P4_21_filterPopulationLogic.java:21)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace651992021", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace651992021'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_21_filterPopulationLogic.beforeClass(US17P4_21_filterPopulationLogic.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_21_filterPopulationLogic@3bf7ca37</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_13_ApproveButtonAction.beforeClass()'><b>beforeClass</b><br>Test class: insuredge_ankush.US17P4_13_ApproveButtonAction</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_13_ApproveButtonAction.beforeClass(US17P4_13_ApproveButtonAction.java:17)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1372150180", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1372150180'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_13_ApproveButtonAction.beforeClass(US17P4_13_ApproveButtonAction.java:17)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_13_ApproveButtonAction@3c9754d8</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='insuredge_ankush.US17P4_12_tableDataFormatValidation.TC10_ValidateAppliedOnDateFormat()'><b>TC10_ValidateAppliedOnDateFormat</b><br>Test class: insuredge_ankush.US17P4_12_tableDataFormatValidation</td>
+<td></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_12_tableDataFormatValidation@1a677343</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_12_tableDataFormatValidation.TC09_ValidateTenureDisplayFormat()'><b>TC09_ValidateTenureDisplayFormat</b><br>Test class: insuredge_ankush.US17P4_12_tableDataFormatValidation</td>
+<td></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_12_tableDataFormatValidation@1a677343</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_12_tableDataFormatValidation.TC02_ValidateMobileNumbersFormat()'><b>TC02_ValidateMobileNumbersFormat</b><br>Test class: insuredge_ankush.US17P4_12_tableDataFormatValidation</td>
+<td></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_12_tableDataFormatValidation@1a677343</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_12_tableDataFormatValidation.TC05_ValidateMainCategoryDisplayFormat()'><b>TC05_ValidateMainCategoryDisplayFormat</b><br>Test class: insuredge_ankush.US17P4_12_tableDataFormatValidation</td>
+<td></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_12_tableDataFormatValidation@1a677343</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_12_tableDataFormatValidation.TC04_ValidatePolicyNameDisplayFormat()'><b>TC04_ValidatePolicyNameDisplayFormat</b><br>Test class: insuredge_ankush.US17P4_12_tableDataFormatValidation</td>
+<td></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_12_tableDataFormatValidation@1a677343</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_12_tableDataFormatValidation.TC01_ValidateCustomerNameDisplayFormat()'><b>TC01_ValidateCustomerNameDisplayFormat</b><br>Test class: insuredge_ankush.US17P4_12_tableDataFormatValidation</td>
+<td></td>
+<td>4</td>
+<td>insuredge_ankush.US17P4_12_tableDataFormatValidation@1a677343</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_12_tableDataFormatValidation.TC11_ValidateActionsButtonsDisplayFormat()'><b>TC11_ValidateActionsButtonsDisplayFormat</b><br>Test class: insuredge_ankush.US17P4_12_tableDataFormatValidation</td>
+<td></td>
+<td>1</td>
+<td>insuredge_ankush.US17P4_12_tableDataFormatValidation@1a677343</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_12_tableDataFormatValidation.TC06_ValidateSubCategoryFormat()'><b>TC06_ValidateSubCategoryFormat</b><br>Test class: insuredge_ankush.US17P4_12_tableDataFormatValidation</td>
+<td></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_12_tableDataFormatValidation@1a677343</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_12_tableDataFormatValidation.TC03_ValidateEmailFormat()'><b>TC03_ValidateEmailFormat</b><br>Test class: insuredge_ankush.US17P4_12_tableDataFormatValidation</td>
+<td></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_12_tableDataFormatValidation@1a677343</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_12_tableDataFormatValidation.TC07_ValidateSumAssuredFormat()'><b>TC07_ValidateSumAssuredFormat</b><br>Test class: insuredge_ankush.US17P4_12_tableDataFormatValidation</td>
+<td></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_12_tableDataFormatValidation@1a677343</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_12_tableDataFormatValidation.TC08_ValidatePremiumFormat()'><b>TC08_ValidatePremiumFormat</b><br>Test class: insuredge_ankush.US17P4_12_tableDataFormatValidation</td>
+<td></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_12_tableDataFormatValidation@1a677343</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='insuredge_ankush.US17P4_21_filterPopulationLogic.tc02_validateCustomerDropdownUniqueAndRelevant()'><b>tc02_validateCustomerDropdownUniqueAndRelevant</b><br>Test class: insuredge_ankush.US17P4_21_filterPopulationLogic</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_21_filterPopulationLogic.beforeClass(US17P4_21_filterPopulationLogic.java:21)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace641980258", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace641980258'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_21_filterPopulationLogic.beforeClass(US17P4_21_filterPopulationLogic.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_21_filterPopulationLogic@3bf7ca37</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_13_ApproveButtonAction.TC02_validateRecordMovesToApproved()'><b>TC02_validateRecordMovesToApproved</b><br>Test class: insuredge_ankush.US17P4_13_ApproveButtonAction</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_13_ApproveButtonAction.beforeClass(US17P4_13_ApproveButtonAction.java:17)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1830669823", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1830669823'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_13_ApproveButtonAction.beforeClass(US17P4_13_ApproveButtonAction.java:17)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_13_ApproveButtonAction@3c9754d8</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_21_filterPopulationLogic.tc04_validatePolicyNameSearchSpecialChars_NoResultsThenRestore()'><b>tc04_validatePolicyNameSearchSpecialChars_NoResultsThenRestore</b><br>Test class: insuredge_ankush.US17P4_21_filterPopulationLogic</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_21_filterPopulationLogic.beforeClass(US17P4_21_filterPopulationLogic.java:21)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace790851040", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace790851040'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_21_filterPopulationLogic.beforeClass(US17P4_21_filterPopulationLogic.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_21_filterPopulationLogic@3bf7ca37</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_21_filterPopulationLogic.tc01_validateDefaultCustomerIsAll()'><b>tc01_validateDefaultCustomerIsAll</b><br>Test class: insuredge_ankush.US17P4_21_filterPopulationLogic</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_21_filterPopulationLogic.beforeClass(US17P4_21_filterPopulationLogic.java:21)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1124360095", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1124360095'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_21_filterPopulationLogic.beforeClass(US17P4_21_filterPopulationLogic.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_21_filterPopulationLogic@3bf7ca37</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_13_ApproveButtonAction.TC03_validateApprovalSuccessMessage()'><b>TC03_validateApprovalSuccessMessage</b><br>Test class: insuredge_ankush.US17P4_13_ApproveButtonAction</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_13_ApproveButtonAction.beforeClass(US17P4_13_ApproveButtonAction.java:17)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace271502370", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace271502370'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_13_ApproveButtonAction.beforeClass(US17P4_13_ApproveButtonAction.java:17)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_13_ApproveButtonAction@3c9754d8</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_13_ApproveButtonAction.TC01_validateApproveClick()'><b>TC01_validateApproveClick</b><br>Test class: insuredge_ankush.US17P4_13_ApproveButtonAction</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_13_ApproveButtonAction.beforeClass(US17P4_13_ApproveButtonAction.java:17)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1127434428", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1127434428'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_13_ApproveButtonAction.beforeClass(US17P4_13_ApproveButtonAction.java:17)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_13_ApproveButtonAction@3c9754d8</td></tr>
+<tr>
+<td title='insuredge_ankush.US17P4_21_filterPopulationLogic.tc03_validatePolicyNameAlphanumericSearch()'><b>tc03_validatePolicyNameAlphanumericSearch</b><br>Test class: insuredge_ankush.US17P4_21_filterPopulationLogic</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_21_filterPopulationLogic.beforeClass(US17P4_21_filterPopulationLogic.java:21)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1677976140", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1677976140'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.get(String)&quot; because &quot;this.driver&quot; is null
+	at insuredge_ankush.testBase.launchAndNavigation(testBase.java:100)
+	at insuredge_ankush.US17P4_21_filterPopulationLogic.beforeClass(US17P4_21_filterPopulationLogic.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>insuredge_ankush.US17P4_21_filterPopulationLogic@3bf7ca37</td></tr>
+</table><p>
+</body>
+</html>

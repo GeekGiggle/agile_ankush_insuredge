@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-02-17T14:45:25 IST" name="ParallelClassSuite" finished-at="2026-02-17T14:45:36 IST" duration-ms="11616">
+    <groups>
+    </groups>
+    <test started-at="2026-02-17T14:45:25 IST" name="US17P4_Parallel_By_Class" finished-at="2026-02-17T14:45:36 IST" duration-ms="11616">
+      <class name="insuredge_ankush.US17P4_21_filterPopulationLogic">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:19 IST" name="beforeSuite" finished-at="2026-02-17T14:45:25 IST" duration-ms="5224" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:25 IST" name="beforeClass" finished-at="2026-02-17T14:45:33 IST" duration-ms="7836" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method signature="tc01_validateDefaultCustomerIsAll()[pri:1, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:33 IST" name="tc01_validateDefaultCustomerIsAll" finished-at="2026-02-17T14:45:33 IST" duration-ms="281" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc01_validateDefaultCustomerIsAll -->
+        <test-method signature="tc02_validateCustomerDropdownUniqueAndRelevant()[pri:2, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:33 IST" name="tc02_validateCustomerDropdownUniqueAndRelevant" finished-at="2026-02-17T14:45:34 IST" duration-ms="1529" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc02_validateCustomerDropdownUniqueAndRelevant -->
+        <test-method signature="tc03_validatePolicyNameAlphanumericSearch()[pri:3, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:34 IST" name="tc03_validatePolicyNameAlphanumericSearch" finished-at="2026-02-17T14:45:35 IST" duration-ms="800" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc03_validatePolicyNameAlphanumericSearch -->
+        <test-method signature="tc04_validatePolicyNameSearchSpecialChars_NoResultsThenRestore()[pri:4, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:35 IST" name="tc04_validatePolicyNameSearchSpecialChars_NoResultsThenRestore" finished-at="2026-02-17T14:45:36 IST" duration-ms="1050" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tc04_validatePolicyNameSearchSpecialChars_NoResultsThenRestore -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:36 IST" name="afterSuite" finished-at="2026-02-17T14:45:42 IST" duration-ms="5365" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- insuredge_ankush.US17P4_21_filterPopulationLogic -->
+    </test> <!-- US17P4_Parallel_By_Class -->
+  </suite> <!-- ParallelClassSuite -->
+</testng-results>
