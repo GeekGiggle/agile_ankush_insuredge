@@ -111,7 +111,7 @@ protected WebDriver driver;
     protected void navigation_rejectedPH() {
         try {
             WebElement sidebar = getWait().until(
-                ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='nav-link']//span[1]")));
+                ExpectedConditions.elementToBeClickable(By.xpath("//body/aside[@id='sidebar']/ul[@id='sidebar-nav']/li[5]/a[1]/span[1]")));
             sidebar.click();
             WebElement rejectedPH = getWait().until(
                 ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='policyHolder-nav']/li[4]")));
@@ -123,7 +123,7 @@ protected WebDriver driver;
     protected void navigation_approvedPH() {
         try {
             WebElement sidebar = getWait().until(
-                ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='nav-link']//span[1]")));
+                ExpectedConditions.elementToBeClickable(By.xpath("//body/aside[@id='sidebar']/ul[@id='sidebar-nav']/li[5]/a[1]/span[1]")));
             sidebar.click();
             WebElement approvedPH = getWait().until(
                 ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='policyHolder-nav']/li[2]")));
@@ -136,7 +136,7 @@ protected WebDriver driver;
     protected void navigation_pendingPH() {
     	try {
     		WebElement sidebar = getWait().until(
-                    ExpectedConditions.elementToBeClickable(By.xpath("//a[@class='nav-link']//span[1]")));
+                    ExpectedConditions.elementToBeClickable(By.xpath("//body/aside[@id='sidebar']/ul[@id='sidebar-nav']/li[5]/a[1]/span[1]")));
             sidebar.click();
             WebElement pendingPH = getWait().until(
                     ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='policyHolder-nav']/li[3]")));
