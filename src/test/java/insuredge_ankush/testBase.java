@@ -141,8 +141,8 @@ public class testBase {
 
     // ---------- NAVIGATION (ROBUST) ----------
     // Important: CLICK THE <a> NOT THE <span> and don't use li[5]
-    private final By POLICY_HOLDER_MENU = By.xpath(
-            "//ul[@id='sidebar-nav']//a[.//span[contains(normalize-space(),'Policy Holder')] or contains(normalize-space(.),'Policy Holder')]"
+    private final By POLICY_HOLDER_MENU = By.cssSelector(
+            "body > aside:nth-child(2) > ul:nth-child(1) > li:nth-child(5) > a:nth-child(1) > span:nth-child(2)"
     );
 
     private final By PENDING_PH = By.xpath("//ul[@id='policyHolder-nav']//a[contains(normalize-space(.),'Pending')]");
