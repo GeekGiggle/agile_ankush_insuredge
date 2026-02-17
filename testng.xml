@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- Runs the three classes in parallel (one thread per class) -->
-<suite name="ParallelClassSuite" parallel="classes" thread-count="3" verbose="1">
+<suite name="ParallelClassSuite" thread-count="3">
 
   <test name="US17P4_Parallel_By_Class" parallel="classes">
     <classes>
      <class name="insuredge_ankush.US17P4_12_tableDataFormatValidation"/>
-     <!-- <class name="insuredge_ankush.US17P4_13_ApproveButtonAction"/>
-      <class name="insuredge_ankush.US17P4_21_filterPopulationLogic"/> -->
+     <class name="insuredge_ankush.US17P4_13_ApproveButtonAction"/>
+      <class name="insuredge_ankush.US17P4_21_filterPopulationLogic"/>
     </classes>
   </test>
 
