@@ -16,7 +16,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
 	  @BeforeSuite
 	    public void beforeSuite() {
 	        driver = new ChromeDriver();
-	        wait = getWait();
+	        getWait();
 	    }
 
 	    @AfterSuite(alwaysRun = true)
@@ -35,7 +35,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
     @Test(priority = 1)
     public void TC01_ValidateCustomerNameDisplayFormat() {
 
-        WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        WebElement table = getWait().until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("ContentPlaceHolder_Admin_gvPendingHolders")));
 
         List<WebElement> rows = table.findElements(
@@ -49,7 +49,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
 
             WebElement row = rows.get(i);
 
-            List<WebElement> cells = wait.until(
+            List<WebElement> cells = getWait().until(
                     ExpectedConditions.visibilityOfAllElements(
                             row.findElements(By.tagName("td"))
                     ));
@@ -68,7 +68,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
     @Test(priority = 2)
     public void TC02_ValidateMobileNumbersFormat() {
 
-        WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        WebElement table = getWait().until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("ContentPlaceHolder_Admin_gvPendingHolders")));
 
         List<WebElement> rows = table.findElements(
@@ -94,7 +94,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
 
         String emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
 
-        WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        WebElement table = getWait().until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("ContentPlaceHolder_Admin_gvPendingHolders")));
 
         List<WebElement> rows = table.findElements(
@@ -125,7 +125,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
     @Test(priority = 4)
     public void TC04_ValidatePolicyNameDisplayFormat() {
 
-        WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        WebElement table = getWait().until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("ContentPlaceHolder_Admin_gvPendingHolders")));
 
         List<WebElement> rows = table.findElements(
@@ -153,7 +153,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
     @Test(priority = 5)
     public void TC05_ValidateMainCategoryDisplayFormat() {
 
-        WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        WebElement table = getWait().until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("ContentPlaceHolder_Admin_gvPendingHolders")));
 
         List<WebElement> rows = table.findElements(
@@ -181,7 +181,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
     @Test(priority = 6)
     public void TC06_ValidateSubCategoryFormat() {
 
-        WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        WebElement table = getWait().until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("ContentPlaceHolder_Admin_gvPendingHolders")));
 
         List<WebElement> rows = table.findElements(
@@ -209,7 +209,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
     @Test(priority = 7)
     public void TC07_ValidateSumAssuredFormat() {
 
-        WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        WebElement table = getWait().until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("ContentPlaceHolder_Admin_gvPendingHolders")));
 
         List<WebElement> rows = table.findElements(
@@ -234,7 +234,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
     @Test(priority = 8)
     public void TC08_ValidatePremiumFormat() {
 
-        WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        WebElement table = getWait().until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("ContentPlaceHolder_Admin_gvPendingHolders")));
 
         List<WebElement> rows = table.findElements(
@@ -260,7 +260,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
     @Test(priority = 9)
     public void TC09_ValidateTenureDisplayFormat() {
 
-        WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        WebElement table = getWait().until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("ContentPlaceHolder_Admin_gvPendingHolders")));
 
         List<WebElement> rows = table.findElements(
@@ -285,7 +285,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
     @Test(priority = 10)
     public void TC10_ValidateAppliedOnDateFormat() {
 
-        WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        WebElement table = getWait().until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("ContentPlaceHolder_Admin_gvPendingHolders")));
 
         List<WebElement> rows = table.findElements(
@@ -310,7 +310,7 @@ public class US17P4_12_tableDataFormatValidation extends testBase{
     @Test(priority = 11)
     public void TC11_ValidateActionsButtonsDisplayFormat() {
 
-        WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(
+        WebElement table = getWait().until(ExpectedConditions.visibilityOfElementLocated(
                 By.id("ContentPlaceHolder_Admin_gvPendingHolders")));
 
         List<WebElement> rows = table.findElements(

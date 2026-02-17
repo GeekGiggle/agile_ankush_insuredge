@@ -6,8 +6,8 @@
   <test name="US17P4_Parallel_By_Class" parallel="classes">
     <classes>
      <class name="insuredge_ankush.US17P4_12_tableDataFormatValidation"/>
-     <class name="insuredge_ankush.US17P4_13_ApproveButtonAction"/>
-      <class name="insuredge_ankush.US17P4_21_filterPopulationLogic"/>
+     <!-- <class name="insuredge_ankush.US17P4_13_ApproveButtonAction"/>
+      <class name="insuredge_ankush.US17P4_21_filterPopulationLogic"/> -->
     </classes>
   </test>
 

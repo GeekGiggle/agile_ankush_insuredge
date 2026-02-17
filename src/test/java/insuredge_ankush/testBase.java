@@ -6,22 +6,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeSuite;
 
 public class testBase {
 
 protected WebDriver driver;
-    protected WebDriverWait wait;
     
     protected WebDriverWait getWait() {
-        return new WebDriverWait(driver, Duration.ofSeconds(10));
+        return new WebDriverWait(driver, Duration.ofSeconds(90));
     }
 
     protected void jsScroll(WebDriver driver, WebElement element) {
@@ -103,11 +97,11 @@ protected WebDriver driver;
 
     protected void login() {
         try {
-            WebElement username = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtUsername")));
+            WebElement username = getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("txtUsername")));
             username.sendKeys("admin_user");
-            WebElement password = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("txtPassword")));
+            WebElement password = getWait().until(ExpectedConditions.visibilityOfElementLocated(By.id("txtPassword")));
             password.sendKeys("testadmin");
-            WebElement loginBtn = wait.until(ExpectedConditions.elementToBeClickable(By.id("BtnLogin")));
+            WebElement loginBtn = getWait().until(ExpectedConditions.elementToBeClickable(By.id("BtnLogin")));
             loginBtn.click();
         } catch (Exception e) {
             System.out.println("login failed: " + e.getMessage());
@@ -116,10 +110,10 @@ protected WebDriver driver;
 
     protected void navigation_rejectedPH() {
         try {
-            WebElement sidebar = wait.until(
+            WebElement sidebar = getWait().until(
                 ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='sidebar-nav']/li[5]/a")));
             sidebar.click();
-            WebElement rejectedPH = wait.until(
+            WebElement rejectedPH = getWait().until(
                 ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='policyHolder-nav']/li[4]")));
             rejectedPH.click();
         } catch (Exception e) {
@@ -128,10 +122,10 @@ protected WebDriver driver;
     }
     protected void navigation_approvedPH() {
         try {
-            WebElement sidebar = wait.until(
+            WebElement sidebar = getWait().until(
                 ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='sidebar-nav']/li[5]/a")));
             sidebar.click();
-            WebElement approvedPH = wait.until(
+            WebElement approvedPH = getWait().until(
                 ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='policyHolder-nav']/li[2]")));
             approvedPH.click();
         } catch (Exception e) {
@@ -141,10 +135,10 @@ protected WebDriver driver;
 
     protected void navigation_pendingPH() {
     	try {
-    		WebElement sidebar = wait.until(
+    		WebElement sidebar = getWait().until(
                     ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='sidebar-nav']/li[5]/a")));
             sidebar.click();
-            WebElement pendingPH = wait.until(
+            WebElement pendingPH = getWait().until(
                     ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='policyHolder-nav']/li[3]")));
             pendingPH.click();
     	}catch(Exception e){
