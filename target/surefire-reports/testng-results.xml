@@ -1,41 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-17T14:45:25 IST" name="ParallelClassSuite" finished-at="2026-02-17T14:45:36 IST" duration-ms="11616">
+  <suite started-at="2026-02-17T18:01:35 IST" name="ParallelClassSuite" finished-at="2026-02-17T18:01:45 IST" duration-ms="10386">
     <groups>
     </groups>
-    <test started-at="2026-02-17T14:45:25 IST" name="US17P4_Parallel_By_Class" finished-at="2026-02-17T14:45:36 IST" duration-ms="11616">
-      <class name="insuredge_ankush.US17P4_21_filterPopulationLogic">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:19 IST" name="beforeSuite" finished-at="2026-02-17T14:45:25 IST" duration-ms="5224" status="PASS">
+    <test started-at="2026-02-17T18:01:35 IST" name="US17P4_Parallel_By_Class" finished-at="2026-02-17T18:01:45 IST" duration-ms="10386">
+      <class name="insuredge_ankush.US17P4_12_tableDataFormatValidation">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:30 IST" name="beforeSuite" finished-at="2026-02-17T18:01:35 IST" duration-ms="4966" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:25 IST" name="beforeClass" finished-at="2026-02-17T14:45:33 IST" duration-ms="7836" status="PASS">
+        <test-method is-config="true" signature="start()[pri:0, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:35 IST" name="start" finished-at="2026-02-17T18:01:38 IST" duration-ms="3573" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeClass -->
-        <test-method signature="tc01_validateDefaultCustomerIsAll()[pri:1, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:33 IST" name="tc01_validateDefaultCustomerIsAll" finished-at="2026-02-17T14:45:33 IST" duration-ms="281" status="PASS">
+        </test-method> <!-- start -->
+        <test-method signature="TC01_ValidateCustomerNameDisplayFormat()[pri:1, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:38 IST" name="TC01_ValidateCustomerNameDisplayFormat" finished-at="2026-02-17T18:01:41 IST" duration-ms="2198" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc01_validateDefaultCustomerIsAll -->
-        <test-method signature="tc02_validateCustomerDropdownUniqueAndRelevant()[pri:2, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:33 IST" name="tc02_validateCustomerDropdownUniqueAndRelevant" finished-at="2026-02-17T14:45:34 IST" duration-ms="1529" status="PASS">
+        </test-method> <!-- TC01_ValidateCustomerNameDisplayFormat -->
+        <test-method signature="TC02_ValidateMobileNumbersFormat()[pri:2, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:41 IST" name="TC02_ValidateMobileNumbersFormat" finished-at="2026-02-17T18:01:41 IST" duration-ms="505" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc02_validateCustomerDropdownUniqueAndRelevant -->
-        <test-method signature="tc03_validatePolicyNameAlphanumericSearch()[pri:3, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:34 IST" name="tc03_validatePolicyNameAlphanumericSearch" finished-at="2026-02-17T14:45:35 IST" duration-ms="800" status="PASS">
+        </test-method> <!-- TC02_ValidateMobileNumbersFormat -->
+        <test-method signature="TC03_ValidateEmailFormat()[pri:3, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:41 IST" name="TC03_ValidateEmailFormat" finished-at="2026-02-17T18:01:42 IST" duration-ms="555" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc03_validatePolicyNameAlphanumericSearch -->
-        <test-method signature="tc04_validatePolicyNameSearchSpecialChars_NoResultsThenRestore()[pri:4, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:35 IST" name="tc04_validatePolicyNameSearchSpecialChars_NoResultsThenRestore" finished-at="2026-02-17T14:45:36 IST" duration-ms="1050" status="PASS">
+        </test-method> <!-- TC03_ValidateEmailFormat -->
+        <test-method signature="TC04_ValidatePolicyNameDisplayFormat()[pri:4, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:42 IST" name="TC04_ValidatePolicyNameDisplayFormat" finished-at="2026-02-17T18:01:42 IST" duration-ms="480" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc04_validatePolicyNameSearchSpecialChars_NoResultsThenRestore -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:insuredge_ankush.US17P4_21_filterPopulationLogic@670002]" started-at="2026-02-17T14:45:36 IST" name="afterSuite" finished-at="2026-02-17T14:45:42 IST" duration-ms="5365" status="PASS">
+        </test-method> <!-- TC04_ValidatePolicyNameDisplayFormat -->
+        <test-method signature="TC05_ValidateMainCategoryDisplayFormat()[pri:5, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:42 IST" name="TC05_ValidateMainCategoryDisplayFormat" finished-at="2026-02-17T18:01:43 IST" duration-ms="325" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC05_ValidateMainCategoryDisplayFormat -->
+        <test-method signature="TC06_ValidateSubCategoryFormat()[pri:6, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:43 IST" name="TC06_ValidateSubCategoryFormat" finished-at="2026-02-17T18:01:43 IST" duration-ms="359" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC06_ValidateSubCategoryFormat -->
+        <test-method signature="TC07_ValidateSumAssuredFormat()[pri:7, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:43 IST" name="TC07_ValidateSumAssuredFormat" finished-at="2026-02-17T18:01:43 IST" duration-ms="216" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC07_ValidateSumAssuredFormat -->
+        <test-method signature="TC08_ValidatePremiumFormat()[pri:8, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:43 IST" name="TC08_ValidatePremiumFormat" finished-at="2026-02-17T18:01:44 IST" duration-ms="457" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC08_ValidatePremiumFormat -->
+        <test-method signature="TC09_ValidateTenureDisplayFormat()[pri:9, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:44 IST" name="TC09_ValidateTenureDisplayFormat" finished-at="2026-02-17T18:01:44 IST" duration-ms="336" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC09_ValidateTenureDisplayFormat -->
+        <test-method signature="TC10_ValidateAppliedOnDateFormat()[pri:10, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:44 IST" name="TC10_ValidateAppliedOnDateFormat" finished-at="2026-02-17T18:01:44 IST" duration-ms="385" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC10_ValidateAppliedOnDateFormat -->
+        <test-method signature="TC11_ValidateActionsButtonsDisplayFormat()[pri:11, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:44 IST" name="TC11_ValidateActionsButtonsDisplayFormat" finished-at="2026-02-17T18:01:45 IST" duration-ms="922" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TC11_ValidateActionsButtonsDisplayFormat -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:insuredge_ankush.US17P4_12_tableDataFormatValidation@78b66d36]" started-at="2026-02-17T18:01:45 IST" name="afterSuite" finished-at="2026-02-17T18:01:50 IST" duration-ms="5001" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- insuredge_ankush.US17P4_21_filterPopulationLogic -->
+      </class> <!-- insuredge_ankush.US17P4_12_tableDataFormatValidation -->
     </test> <!-- US17P4_Parallel_By_Class -->
   </suite> <!-- ParallelClassSuite -->
 </testng-results>
